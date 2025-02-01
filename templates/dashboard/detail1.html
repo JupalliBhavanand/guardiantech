@@ -1,0 +1,436 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cybersecurity Enhancement | Consultancy Website</title>
+  <meta name="description" content="Explore our Cybersecurity Enhancement project that reduced security incidents by 50% and strengthened IT infrastructure.">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="{% static 'main.css' %}">
+
+  <style>
+    body {
+      font-family: 'Manrope', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .parallax-section {
+      height: 100vh;
+      background-image: url('{% static "images/project2.jpg" %}');
+      background-attachment: fixed;
+      background-position: center;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .parallax-section h1 {
+      font-size: 4rem;
+      margin: 0;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    }
+
+    .parallax-section p {
+      font-size: 1.5rem;
+      margin-top: 1rem;
+      max-width: 800px;
+      line-height: 1.5;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+    }
+
+    .project-content,
+    .features,
+    .benefits,
+    .gallery {
+      padding: 2rem;
+      max-width: 900px;
+      margin: 2rem auto;
+      text-align: justify;
+      line-height: 1.8;
+    }
+
+    h3 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      font-size: 4rem;
+
+    }
+
+    .features ul,
+    .benefits ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .features li,
+    .benefits li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .features li::before,
+    .benefits li::before {
+      content: "✔️";
+      margin-right: 10px;
+      color: #007BFF;
+    }
+
+    .call-to-action {
+      text-align: center;
+      padding: 3rem 1rem;
+      background-color: #007BFF;
+      color: #fff;
+    }
+
+    .call-to-action .btn {
+      background-color: #fff;
+      color: #007BFF;
+      padding: 0.8rem 2rem;
+      border-radius: 5px;
+      text-decoration: none;
+      margin-top: 1rem;
+    }
+    .project-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .project-card img {
+    transition: transform 0.3s;
+  }
+
+  .project-card:hover img {
+    transform: scale(1.05);
+  }
+
+
+  .project-card:hover h3.card-title {
+    color: #007BFF;
+  }
+
+  
+  .parallax-section {
+        height: 100vh;
+        background-image: url('{% static "images/cybersecurity.jpg" %}');
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        text-align: center;
+        padding: 1rem;
+        margin-top: 100px; /* Adjust this value based on your header height */
+    }
+
+    .header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: #fff;
+        z-index: 1000;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        height: 140px; /* Define the height of the header */
+    }
+
+
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header" data-header>
+    <div class="container">
+
+        <a href="{% url 'dashboard-index' %}" class="logo h2 section-title" style="color: #000;"> 
+            <img src="{% static 'images/fulllogo.jpg' %}" width="125" height="50" alt="" class="img-cover2">
+        </a>
+      <nav class="navbar" data-navbar>
+
+        <div class="navbar-top">
+          <a href="#" class="logo h2 section-title" style="color: #000">Welcome</a>
+
+          <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+          </button>
+        </div>
+
+        <ul class="navbar-list">
+          <li>
+            <a href="{% url 'dashboard-index' %}" class="navbar-link" style="color: #000">Home</a>
+          </li>
+          <li>
+            <a href="{% url 'dashboard-index' %}#about" class="navbar-link" style="color: #000">About</a>
+          </li>
+          <li>
+            <a href="{% url 'learn1' %}" class="navbar-link" style="color: #000">Services</a>
+          </li>
+          <li>
+            <a href="{% url 'dashboard-index' %}#about" class="navbar-link" style="color: #000">Features</a>
+          </li>
+          <li>
+            <a href="{% url 'detail1' %}" class="navbar-link" style="color: #000">Projects</a>
+          </li>
+          <li>
+            <a href="{% url 'contact_view' %}" class="navbar-link" style="color: #000">Contact</a>
+          </li>
+        </ul>
+
+        <div class="wrapper">
+         
+        </div>
+
+        <ul class="social-list">
+          <li>
+            <a href="https://www.linkedin.com/in/gaurdian-tech-7b9883335/" class="social-link">
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </a>
+          </li>
+      
+        </ul>
+      </nav>
+
+     
+      <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+        <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+      </button>
+
+      <div class="overlay" data-nav-toggler data-overlay></div>
+
+    </div>
+  </header>
+  <!-- Parallax Section -->
+  <section class="parallax-section">
+    
+  </section>
+
+  <!-- Project Content -->
+  <section class="project-content">
+    <h3 class="animate-fade">Project Overview</h3>
+    <p class="animate-fade">
+        Custom Customer Relationship Management (CRM) development is at the heart of optimizing client interactions, streamlining business processes, and enhancing overall efficiency. Our tailored CRM solutions are designed to align perfectly with your unique business requirements, ensuring seamless integration with your existing systems while offering the flexibility to adapt as your business grows.
+
+        Our approach to CRM development focuses on creating a centralized platform that simplifies customer management, enhances sales pipelines, and provides actionable insights. Whether you’re a small business or a large enterprise, we deliver scalable and user-friendly CRM solutions to help you achieve operational excellence and superior customer satisfaction.
+    </p>
+    <p class="animate-fade">
+      The strategy focused on improving endpoint protection, data encryption, and enhancing user awareness through tailored training 
+      sessions. We also integrated AI-driven monitoring systems for real-time threat detection and response.
+    </p>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features">
+    <h3 class="animate-fade">Key Features</h3>
+    <ul>
+      <li class="animate-scale">Customizable dashboards for tracking key metrics.</li>
+      <li class="animate-scale">Seamless integration with third-party tools and platforms.</li>
+      <li class="animate-scale">Automated sales pipeline for efficient lead management.</li>
+      <li class="animate-scale">Centralized customer data for quick access and organization.</li>
+      <li class="animate-scale">Advanced analytics and reporting for actionable insights.</li>
+    </ul>
+  </section>
+
+  <!-- Benefits Section -->
+  <section class="benefits">
+    <h3 class="animate-fade">Benefits of Our Approach</h3>
+    <ul>
+      <li class="animate-scale">Tailored solutions to meet unique business needs.</li>
+      <li class="animate-scale">Increased efficiency through streamlined processes.</li>
+      <li class="animate-scale">Enhanced customer experience with personalized interactions.</li>
+      <li class="animate-scale">Scalable system that grows with your business.</li>
+      <li class="animate-scale">Real-time data insights for informed decision-making.</li>
+    </ul>
+  </section>
+
+  <!-- Call to Action -->
+ 
+  <section id="projects" class="section project" aria-labelledby="project-label">
+    <div class="container">
+      <p class="section-subtitle" id="project-label">More Projects</p>
+      <h2 class="h2 section-title">
+        Check out some of our awesome projects with creative ideas and great design.
+      </h2>
+      <ul class="grid-list">
+        <li>
+          <a href="{% url 'detail1' %}" class="project-card">
+            <figure class="card-banner img-holder" style="--width: 560; --height: 350;">
+              <img src="{% static 'images/project1.jpg' %}" width="560" height="350" loading="lazy" alt="Ligula tristique quis risus" class="img-cover">
+            </figure>
+            <div class="card-content">
+              <h3 class="h3 card-title">Custom CRM Development</h3>
+              <p class="card-text">
+                We developed a custom CRM system that improved their customer management processes and increased sales by 30%. The project involved integrating various business processes and ensuring seamless data flow across departments.
+              </p>
+              <ul class="card-meta-list">
+                <li class="card-meta-item">
+                  <ion-icon name="calendar-outline" aria-hidden="true"></ion-icon>
+                  <time class="meta-text" datetime="2022-04-14">14 Apr 2024</time>
+                </li>
+                <li class="card-meta-item">
+                  <ion-icon name="document-text-outline" aria-hidden="true"></ion-icon>
+                  <span class="meta-text">Coding</span>
+                </li>
+              </ul>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'detail2' %}" class="project-card">
+            <figure class="card-banner img-holder" style="--width: 560; --height: 350;">
+              <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" width="560" height="350" loading="lazy"
+                alt="Nullam id dolor elit id nibh" class="img-cover">
+            </figure>
+            <div class="card-content">
+              <h3 class="h3 card-title">Cybersecurity Enhancement</h3>
+              <p class="card-text">
+                We helped a client secure their IT infrastructure, reducing security incidents by 50% through a comprehensive cybersecurity strategy. The project included risk assessments, implementing advanced security protocols, and continuous monitoring.
+              </p>
+              <ul class="card-meta-list">
+                <li class="card-meta-item">
+                  <ion-icon name="calendar-outline" aria-hidden="true"></ion-icon>
+                  <time class="meta-text" datetime="2022-03-29">29 Mar 2024</time>
+                </li>
+                <li class="card-meta-item">
+                  <ion-icon name="document-text-outline" aria-hidden="true"></ion-icon>
+                  <span class="meta-text">Coding</span>
+                </li>
+              </ul>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'detail3' %}" class="project-card">
+            <figure class="card-banner img-holder" style="--width: 560; --height: 350;">
+              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" width="560" height="350" loading="lazy"
+                alt="Ultricies fusce porta elit" class="img-cover">
+            </figure>
+            <div class="card-content">
+              <h3 class="h3 card-title">Data Analytics Implementation</h3>
+              <p class="card-text">
+                We implemented a data analytics solution, enabling them to gain actionable insights from their data and improve decision-making. The project involved setting up data pipelines, visualization tools, and training their team.
+              </p>
+              <ul class="card-meta-list">
+                <li class="card-meta-item">
+                  <ion-icon name="calendar-outline" aria-hidden="true"></ion-icon>
+                  <time class="meta-text" datetime="2022-02-26">26 Feb 2024</time>
+                </li>
+                <li class="card-meta-item">
+                  <ion-icon name="document-text-outline" aria-hidden="true"></ion-icon>
+                  <span class="meta-text">Workspace</span>
+                </li>
+              </ul>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container grid-list">
+      <div class="footer-brand">
+        <a href="#" class="logo h4 footer-list-title">GuardianTech LLC</a>
+        <p class="footer-text">
+          &copy; 2024 All rights reserved.
+        </p>
+        <ul class="social-list">
+          <li>
+            <a href="https://www.linkedin.com/in/gaurdian-tech-7b9883335/" class="social-link">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+          </li>
+         
+        </ul>
+      </div>
+      <ul class="footer-list">
+        <li>
+          <p class="h4 footer-list-title">Get in Touch</p>
+        </li>
+        <li>
+          <address class="footer-text">
+            GuardianTech LLC
+              2115 colinas verdas rd
+          </address>
+        </li>
+        <li>
+          <a href="mailto:support@gaurdinateche.com" class="footer-link">support@gaurdinateche.com</a>
+        </li>
+        <li>
+          <a href="tel:001234567890" class="footer-link">(512) 506-0845</a>
+        </li>
+      </ul>
+      <ul class="footer-list">
+        <li>
+          <p class="h4 footer-list-title">Learn More</p>
+        </li>
+        <li>
+          <a href="#about" class="footer-link">About Us</a>
+        </li>
+        <li>
+          <a href="#" class="footer-link">Our Story</a>
+        </li>
+        <li>
+          <a href="#projects" class="footer-link">Projects</a>
+        </li>
+        <li>
+          <a href="#" class="footer-link">Terms of Use</a>
+        </li>
+        <li>
+          <a href="#" class="footer-link">Privacy Policy</a>
+        </li>
+      </ul>
+      <ul class="footer-list">
+        <li>
+          <p class="footer-list-title">Services</p>
+        </li>
+        <li>
+          <a href="{% url 'learn1' %}" class="footer-link">Operations & Growth</a>
+        </li>
+        <li>
+          <a href="{% url 'learn2' %}" class="footer-link">Cybersecurity</a>
+        </li>
+        <li>
+          <a href="{% url 'learn3' %}" class="footer-link">Software Development</a>
+        </li>
+        <li>
+          <a href="{% url 'learn4' %}" class="footer-link">Data Analytics</a>
+        </li>
+      </ul>
+  
+    </div>
+  </footer>
+  
+  <!-- GSAP Animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
+  <script>
+    gsap.to('.animate-fade', { opacity: 1, y: 0, duration: 1, stagger: 0.2 });
+    gsap.to('.animate-scale', { opacity: 1, scale: 1, duration: 1, delay: 0.5 });
+  </script>
+</body>
+
+</html>

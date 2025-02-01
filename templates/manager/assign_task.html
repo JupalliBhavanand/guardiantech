@@ -1,0 +1,198 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assign Task</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f5f7fa;
+      margin: 0;
+    }
+
+    /* Sidebar Styling */
+    .sidebar {
+      width: 240px;
+      height: 100vh;
+      background-color: #fff;
+      position: fixed;
+      top: 0;
+      left: 0;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      padding: 20px 0;
+    }
+
+    .sidebar .logo {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .sidebar .logo img {
+      width: 120px;
+    }
+
+    .sidebar a {
+      text-decoration: none;
+      color: #4a4a4a;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 20px;
+      font-size: 15px;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .sidebar a:hover,
+    .sidebar a.active {
+      background-color: #eef2f6;
+      color: #0056b3;
+      font-weight: 600;
+    }
+
+    .sidebar form {
+      padding: 0 20px;
+    }
+
+    .sidebar form button {
+      width: 100%;
+    }
+
+    /* Navbar Styling */
+    .navbar {
+      margin-left: 240px;
+      padding: 1rem 2rem;
+      background-color: #ffffff;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    /* Main Content */
+    .container {
+      margin-left: 260px;
+      padding: 20px;
+    }
+
+    .container h2 {
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .form-label {
+      font-weight: 600;
+    }
+
+    /* Back Button */
+    .back-button {
+      text-decoration: none;
+      font-size: 16px;
+      color: #fff;
+      background-color: #6c757d;
+      padding: 8px 16px;
+      border-radius: 5px;
+      display: inline-block;
+      transition: all 0.2s ease-in-out;
+      margin-bottom: 20px;
+    }
+
+    .back-button:hover {
+      background-color: #5a6268;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+      }
+
+      .navbar {
+        margin-left: 0;
+      }
+
+      .container {
+        margin-left: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="logo">
+      <img src="{% static 'images/fulllogo.jpg' %}" alt="Logo">
+    </div>
+    <a href="{% url 'profile' %}" class="active"><i class="fas fa-home"></i> Home</a>
+    <a href="{% url 'view_attendance' %}"><i class="fas fa-clock"></i> Attendance</a>
+    <a href="{% url 'view_offer_letter' %}"><i class="fas fa-tasks"></i> Offer Letter</a>
+    <a href="{% url 'view_payrolls' %}"><i class="fas fa-briefcase"></i> Payrolls</a>
+    <a href="{% url 'apply_leave' %}"><i class="fas fa-briefcase"></i> Apply Leave</a>
+    <a href="{% url 'employee_leave_history' %}"><i class="fas fa-briefcase"></i> Check Leaves</a>
+    {% if is_manager %}
+    <a href="{% url 'employee_list' %}"><i class="fas fa-users"></i> Manage Employees</a>
+    <a href="{% url 'review_leave' %}"><i class="fas fa-check-circle"></i> Review Leaves</a>
+    <a href="{% url 'assign_task' %}" class="active"><i class="fas fa-tasks"></i> Assign Tasks</a>
+    {% endif %}
+    <form action="{% url 'user-logout' %}" method="post" class="px-3 mt-4">
+      {% csrf_token %}
+      <button type="submit" class="btn btn-outline-dark w-100">Logout</button>
+    </form>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <h3>Task Management</h3>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container">
+    <!-- Back Button -->
+    <a href="javascript:history.back()" class="back-button">&larr; Back</a>
+
+    <!-- Page Header -->
+    <h2>Assign Task</h2>
+
+    <!-- Task Assignment Form -->
+    <form method="post">
+      {% csrf_token %}
+      <div class="mb-3">
+        <label for="title" class="form-label">Task Title</label>
+        <input type="text" id="title" name="title" class="form-control" placeholder="Enter task title" required>
+      </div>
+      <div class="mb-3">
+        <label for="description" class="form-label">Task Description</label>
+        <textarea id="description" name="description" class="form-control" rows="4" placeholder="Enter task description" required></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="assigned_to" class="form-label">Assign To</label>
+        <select id="assigned_to" name="assigned_to" class="form-control" required>
+          {% for employee in employees %}
+          <option value="{{ employee.id }}">{{ employee.user.username }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="due_date" class="form-label">Due Date</label>
+        <input type="date" id="due_date" name="due_date" class="form-control" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Assign Task</button>
+    </form>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

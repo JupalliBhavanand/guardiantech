@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Welcome, {{ employee.user.first_name }} {{ employee.user.last_name }}</h1>
+
+    <div class="container">
+        <h2>Your Tasks</h2>
+        <ul>
+            {% for task in tasks %}
+                <li>{{ task.title }} - Due on {{ task.due_date }}</li>
+            {% empty %}
+                <li>No tasks assigned to you yet.</li>
+            {% endfor %}
+        </ul>
+
+        <h2>Your Offer Letters</h2>
+        <ul>
+            {% for offer_letter in offer_letters %}
+                <li>{{ offer_letter.date_issued }}: {{ offer_letter.offer_details }}</li>
+            {% empty %}
+                <li>No offer letters available.</li>
+            {% endfor %}
+        </ul>
+
+        <h2>Your Pay Slips</h2>
+        <ul>
+            {% for payroll in payrolls %}
+                <li>{{ payroll.date_issued }}: Salary - {{ payroll.salary }}</li>
+            {% empty %}
+                <li>No payrolls available.</li>
+            {% endfor %}
+        </ul>
+
+        <h2>Edit Your Personal Details</h2>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+        </form>
+
+        {% if employee.photo %}
+            <h2>Your Profile Photo</h2>
+            <img src="{{ employee.photo.url }}" alt="Profile Photo" class="img-thumbnail">
+        {% else %}
+            <p>No profile photo uploaded yet.</p>
+        {% endif %}
+    </div>
+{% endblock %}

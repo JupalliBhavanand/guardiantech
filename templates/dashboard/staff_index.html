@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Dashboard</title>
+    <link rel="stylesheet" href="{% static 'staff.css' %}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Leaves</a></li>
+                <li><a href="#">Self</a></li>
+                <li><a href="#">Job Vacancies</a></li>
+                <li><a href="#">Attendance</a></li>
+                <li><a href="#">My Account</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="profile-section">
+            <img src="profile-pic.png" alt="Profile Picture" class="profile-pic">
+            <h2>Luigi Davis</h2>
+            <p>Senior PHP Developer</p>
+            <div class="work-duration">
+                <p>At work for: 1 year 3 months 8 days</p>
+            </div>
+            <div class="stats">
+                <div class="stat-item">
+                    <p>0/28</p>
+                    <p>Attendance</p>
+                </div>
+                <div class="stat-item">
+                    <p>0/440</p>
+                    <p>Leaves</p>
+                </div>
+                <div class="stat-item">
+                    <p>0</p>
+                    <p>Awards</p>
+                </div>
+            </div>
+            <div class="birthdays">
+                <p><strong>Birthdays:</strong></p>
+                <p>Freddie Kemmer has birthday on</p>
+            </div>
+        </div>
+
+        <div class="details-section">
+            <div class="personal-details">
+                <h3>Personal Details</h3>
+                <p><strong>Name:</strong> Luigi Davis</p>
+                <p><strong>Father's Name:</strong> Cristina Cole</p>
+                <p><strong>Date of Birth:</strong> 08-Oct-2007</p>
+                <p><strong>Gender:</strong> Male</p>
+                <p><strong>Email:</strong> conroy.milford@gmail.com</p>
+                <p><strong>Phone:</strong> 952.457.9744</p>
+                <p><strong>Local Address:</strong> 98927 Alexis Landing West Lourdes, DE 08534</p>
+                <p><strong>Permanent Address:</strong> 5203 King Way North May, IL 32320</p>
+            </div>
+
+            <div class="company-details">
+                <h3>Company Details</h3>
+                <p><strong>Employee ID:</strong> 5157</p>
+                <p><strong>Department:</strong> PHP</p>
+                <p><strong>Designation:</strong> Senior PHP Developer</p>
+            </div>
+
+            <div class="notice-board">
+                <h3>Notice Board</h3>
+                <p>No Notice</p>
+            </div>
+
+            <div class="upcoming-holidays">
+                <h3>Upcoming Holidays</h3>
+                <ul>
+                    <li>Office Off - 07 Sep 2018</li>
+                    <li>Office Off - 05 Oct 2018</li>
+                    <li>Office Off - 26 Oct 2018</li>
+                    <li>Office Off - 02 Nov 2018</li>
+                    <li>Office Off - 16 Nov 2018</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

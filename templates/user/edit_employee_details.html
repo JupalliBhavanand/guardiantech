@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">{{ request.user.first_name }}'s Dashboard</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto">
+        <!-- General Links -->
+        <li class="nav-item">
+          <a class="nav-link" href="#profile-section">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'view_attendance' %}">Attendance</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#tasks-section">Tasks</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'view_offer_letter' %}">Offer Letters</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'view_payrolls' %}">Payrolls</a>
+        </li>
+
+        <!-- Manager-Specific Links -->
+        {% if is_manager %}
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'employee_list' %}">Manager Actions</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'employee_list' %}">Manage Employees</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'user-register' %}">Add Employees</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'assign_task' %}">Assign tasks</a>
+        </li>
+        {% endif %}
+      </ul>
+
+      <!-- Logout Button -->
+      <form class="d-flex" action="{% url 'user-logout' %}" method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-outline-light">Logout</button>
+      </form>
+    </div>
+  </div>
+</nav>
+<h2>Edit Personal Details</h2>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit" class="btn btn-primary">Save Changes</button>
+</form>
+{% endblock %}

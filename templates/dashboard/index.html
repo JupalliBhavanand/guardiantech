@@ -1,0 +1,296 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consultancy Website</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    .navbar {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      background: rgba(0, 0, 0, 0.9);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      z-index: 10;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .navbar .logo {
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .navbar ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+
+    .navbar ul li a:hover {
+      color: #f39c12;
+    }
+
+    .section {
+      padding: 120px 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    .background-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      filter: brightness(70%);
+    }
+
+    .content {
+      color: #fff;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .content button {
+      background: #f39c12;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 1rem;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .content button:hover {
+      background: #e67e22;
+    }
+
+    .parallax {
+      background-attachment: fixed;
+      background-size: cover;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .card {
+      background: #fff;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .card h3 {
+      font-size: 1.2rem;
+      padding: 10px;
+    }
+
+    .card p {
+      padding: 0 10px 10px;
+      font-size: 0.9rem;
+    }
+
+    .team-section {
+      background: #f4f4f4;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .team-member {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 10px;
+    }
+
+    .team-member img {
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .team-member h3 {
+      margin: 10px 0;
+    }
+
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    footer a {
+      color: #f39c12;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: #e67e22;
+    }
+
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <header class="navbar">
+    <div class="logo">Consultancy</div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#login">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Home Section -->
+  <section id="home" class="section">
+    <video autoplay muted loop class="background-video">
+      <source src="{% static 'images/hero-video.mp4' %}" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="content">
+      <h1>Welcome to Our Consultancy</h1>
+      <p>Providing expert solutions for your business</p>
+      <button>Get Started</button>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section">
+    <h2>About Us</h2>
+    <p>We are a leading consultancy firm specializing in innovative solutions to help businesses thrive. Our experts bring years of experience to guide your organization to success.</p>
+    <img src="{% static 'images/about.jpg' %}" alt="About Us">
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="section">
+    <h2>Our Services</h2>
+    <div class="grid-container">
+      <div class="card">
+        <img src="{% static 'images/service1.jpg' %}" alt="Service 1">
+        <h3>Business Strategy</h3>
+        <p>Helping you define a winning strategy to outpace your competition.</p>
+      </div>
+      <div class="card">
+        <img src="{% static 'images/service2.jpg' %}" alt="Service 2">
+        <h3>Financial Planning</h3>
+        <p>Optimize your financial operations and maximize profitability.</p>
+      </div>
+      <div class="card">
+        <img src="{% static 'images/service3.jpg' %}" alt="Service 3">
+        <h3>IT Solutions</h3>
+        <p>Innovative IT solutions to modernize and secure your operations.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section id="team" class="team-section">
+    <h2>Meet Our Team</h2>
+    <div class="grid-container">
+      <div class="team-member">
+        <img src="{% static 'images/team1.jpg' %}" alt="Team Member 1">
+        <h3>John Doe</h3>
+        <p>CEO & Founder</p>
+      </div>
+      <div class="team-member">
+        <img src="{% static 'images/team2.jpg' %}" alt="Team Member 2">
+        <h3>Jane Smith</h3>
+        <p>Chief Marketing Officer</p>
+      </div>
+      <div class="team-member">
+        <img src="{% static 'images/team3.jpg' %}" alt="Team Member 3">
+        <h3>Michael Brown</h3>
+        <p>Lead Consultant</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="section">
+    <h2>What Our Clients Say</h2>
+    <div class="grid-container">
+      <div class="card">
+        <h3>John Client</h3>
+        <p>"Their solutions completely transformed our business. Highly recommended!"</p>
+      </div>
+      <div class="card">
+        <h3>Sarah CEO</h3>
+        <p>"Professional, dedicated, and truly innovative. Our go-to consultants!"</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section">
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Consultancy. All Rights Reserved. | <a href="#home">Back to Top</a></p>
+  </footer>
+
+  <script>
+    gsap.from(".navbar", { duration: 1, y: -100, opacity: 0 });
+    gsap.from(".content h1", { duration: 1, x: -200, opacity: 0, delay: 0.5 });
+    gsap.from(".content p", { duration: 1, x: 200, opacity: 0, delay: 1 });
+    gsap.from(".content button", { duration: 1, y: 50, opacity: 0, delay: 1.5 });
+  </script>
+</body>
+</html>

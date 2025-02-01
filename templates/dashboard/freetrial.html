@@ -1,0 +1,323 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Trial - Azayd</title>
+    <link rel="stylesheet" href="{% static 'freeTrial.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="header" data-header>
+      <div class="container">
+          <a href="{% url 'dashboard-index' %}" class="logo h2 section-title" style="color: #0d0d0f;">gaurdinateche</a>
+          <nav class="navbar" data-navbar>
+            <div class="navbar-top">
+              <a href="#" class="logo h2 section-title" style="color: #0d0d0f;">Welcome</a>
+    
+              <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+                <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+              </button>
+            </div>
+            <ul class="navbar-list">
+                <li><a href="{% url 'dashboard-index' %}" class="navbar-link" style="color: #0d0d0f;">Home</a></li>
+                <li><a href="#services" class="navbar-link" style="color: #0d0d0f;">Services</a></li>
+                <li><a href="#free-trial" class="navbar-link" style="color: #0d0d0f;">Free Trial</a></li>
+            </ul>
+            <div class="wrapper">
+              <a href="index.html" class="btn btn-outline" style="color: #0d0d0f;">Home</a>
+              <a href="customerLoginPage.html" class="btn btn-outline" id="loginLink" style="color: #0d0d0f;">Login/Signup</a>
+              <a href="#" class="btn btn-outline" id="logoutLink" style="color: #0d0d0f;">Logout</a>
+              <a href="mailto:info@email.com" class="contact-link" style="color: #0d0d0f;">contact.Cybernetic@gmail.com</a>
+              <a href="tel:001234567890" class="contact-link" style="color: #0d0d0f;">+91 98765 43210</a>
+            </div>
+            <ul class="social-list">
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-twitter"></ion-icon>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-youtube"></ion-icon>
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+            <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+          </button>
+          <div class="overlay" data-nav-toggler data-overlay></div>
+      </div>
+  </header>
+
+  <main>
+      <section class="hero-section hero has-bg-image" style="background-image: url('./images/hero-bg.jpg')">
+          <div class="container">
+              <h1 class="section-title" style="color: #0d0d0f;">Explore Our Services with a Free Trial</h1>
+              <p style="color: #0d0d0f;">Experience the benefits of our innovative IT solutions with a no-obligation free trial.</p>
+          </div>
+      </section>
+      <section id="services" class="section service" aria-labelledby="service-label">
+        <div class="container">
+          <p class="section-subtitle" id="service-label">Our Services</p>
+          <h2 class="h2 section-title">
+            Designed to meet your needs.
+          </h2>
+          <ul class="grid-list">
+            <li>
+              <div class="service-card">
+                <div class="card-icon">
+                  <ion-icon name="stats-chart-outline"></ion-icon>
+                </div>
+                <h3 class="h4 card-title">Operations & Growth</h3>
+                <p class="card-text">
+                  We help improve your operations and promote business growth.
+                </p>
+                <a href="#free-trial" class="btn-text">
+                  <span class="span">Learn More</span>
+                  <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                </a>
+              </div>
+            </li>
+            <li>
+              <div class="service-card">
+                <div class="card-icon">
+                  <ion-icon name="globe-outline"></ion-icon>
+                </div>
+                <h3 class="h4 card-title">Cybersecurity</h3>
+                <p class="card-text">
+                  We protect your business from online threats with the latest security measures.
+                </p>
+                <a href="#free-trial" class="btn-text">
+                  <span class="span">Learn More</span>
+                  <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                </a>
+              </div>
+            </li>
+            <li>
+              <div class="service-card">
+                <div class="card-icon">
+                  <ion-icon name="code-slash-outline"></ion-icon>
+                </div>
+                <h3 class="h4 card-title">Software Development</h3>
+                <p class="card-text">
+                  We create custom software to meet your business needs.
+                </p>
+                <a href="#free-trial" class="btn-text">
+                  <span class="span">Learn More</span>
+                  <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                </a>
+              </div>
+            </li>
+            <li>
+              <div class="service-card">
+                <div class="card-icon">
+                  <ion-icon name="analytics-outline"></ion-icon>
+                </div>
+                <h3 class="h4 card-title">Data Analytics</h3>
+                <p class="card-text">
+                  We turn your data into valuable insights for better decision-making.
+                </p>
+                <a href="#free-trial" class="btn-text">
+                  <span class="span">Learn More</span>
+                  <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                </a>
+              </div>
+            </li>
+            <li>
+              <div class="service-card">
+                <div class="card-icon">
+                  <ion-icon name="cloud-upload-outline"></ion-icon>
+                </div>
+                <h3 class="h4 card-title">Cloud Services</h3>
+                <p class="card-text">
+                  We offer cloud solutions to make your business more flexible and scalable.
+                </p>
+                <a href="#free-trial" class="btn-text">
+                  <span class="span">Learn More</span>
+                  <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                </a>
+              </div>
+            </li>
+            <li>
+              <div class="service-card">
+                <div class="card-icon">
+                  <ion-icon name="wifi-outline"></ion-icon>
+                </div>
+                <h3 class="h4 card-title">Network Solutions</h3>
+                <p class="card-text">
+                  We ensure your business has a strong and secure network.
+                </p>
+                <a href="#free-trial" class="btn-text">
+                  <span class="span">Learn More</span>
+                  <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                </a>
+              </div>
+            </li>
+            <li>
+              <div class="service-card">
+                <div class="card-icon">
+                  <ion-icon name="sync-outline"></ion-icon>
+                </div>
+                <h3 class="h4 card-title">Digital Transformation</h3>
+                <p class="card-text">
+                  We help you adopt new technologies to improve your business processes.
+                </p>
+                <a href="#free-trial" class="btn-text">
+                  <span class="span">Learn More</span>
+                  <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                </a>
+              </div>
+            </li>
+            <li>
+              <div class="service-card">
+                <div class="card-icon">
+                  <ion-icon name="server-outline"></ion-icon>
+                </div>
+                <h3 class="h4 card-title">Infrastructure Management</h3>
+                <p class="card-text">
+                  We manage your IT infrastructure to keep it reliable and secure.
+                </p>
+                <a href="#free-trial" class="btn-text">
+                  <span class="span">Learn More</span>
+                  <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                </a>
+              </div>
+            </li>
+            <li>
+              <div class="service-card">
+                <div class="card-icon">
+                  <ion-icon name="construct-outline"></ion-icon>
+                </div>
+                <h3 class="h4 card-title">IT Support & Maintenance</h3>
+                <p class="card-text">
+                  We provide ongoing IT support and maintenance to ensure your systems run smoothly and efficiently.
+                </p>
+                <a href="#free-trial" class="btn-text">
+                  <span class="span">Learn More</span>
+                  <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                </a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section id="free-trial" class="free-trial-section">
+        <div class="container">
+            <h2 class="section-title">Register for a Free Trial</h2>
+            <!-- Free Trial Form Starts Here -->
+            <form id="freeTrialForm" class="free-trial-form" method="post" action="{% url 'free_trial' %}">
+                {% csrf_token %}
+                <div class="form-group">
+                    {{ form.name.label_tag }}
+                    {{ form.name }}
+                </div>
+                <div class="form-group">
+                    {{ form.email.label_tag }}
+                    {{ form.email }}
+                </div>
+                <div class="form-group">
+                    {{ form.phone.label_tag }}
+                    {{ form.phone }}
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+      <div class="container grid-list">
+          <div class="footer-brand">
+            <a href="#" class="logo h4 footer-list-title">gaurdinateche</a>
+            <p class="footer-text">
+              &copy; 2024 <br> All rights reserved.
+            </p>
+            <ul class="social-list">
+              <li>
+                <a href="https://www.linkedin.com/in/gaurdian-tech-7b9883335/" class="social-link">
+                  <ion-icon name="logo-linkedin"></ion-icon>
+                </a>
+              </li>
+             
+            </ul>
+          </div>
+          <ul class="footer-list">
+            <li>
+              <p class="h4 footer-list-title">Get in Touch</p>
+            </li>
+            <li>
+              <address class="footer-text">
+                GuardianTech LLC
+                2115 colinas verdas rd
+              </address>
+            </li>
+            <li>
+              <a href="mailto:info@email.com" class="footer-link">contact.support@gaurdinateche.com</a>
+            </li>
+            <li>
+              <a href="tel:001234567890" class="footer-link">+91 98765 432103</a>
+            </li>
+          </ul>
+          <ul class="footer-list">
+            <li>
+              <p class="h4 footer-list-title">Learn More</p>
+            </li>
+            <li>
+              <a href="#about" class="footer-link">About Us</a>
+            </li>
+            <li>
+              <a href="#" class="footer-link">Our Story</a>
+            </li>
+            <li>
+              <a href="#projects" class="footer-link">Projects</a>
+            </li>
+            <li>
+              <a href="#" class="footer-link">Terms of Use</a>
+            </li>
+            <li>
+              <a href="#" class="footer-link">Privacy Policy</a>
+            </li>
+          </ul>
+          <ul class="footer-list">
+            <li>
+              <p class="h4 footer-list-title">Services</p>
+            </li>
+            <li>
+              <a href="#services" class="footer-link">Operations & Growth</a>
+            </li>
+            <li>
+              <a href="#services" class="footer-link">Cybersecurity</a>
+            </li>
+            <li>
+              <a href="#services" class="footer-link">Software Development</a>
+            </li>
+            <li>
+              <a href="#services" class="footer-link">Data Analytics</a>
+            </li>
+          </ul>
+      </div>
+  </footer>
+
+  <!-- CUSTOM JS LINK -->
+  <script src="{% static 'freeTrial.js' %}"></script>
+
+  <!-- IONICON -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Manager Dashboard</h1>
+
+    <h2>Employees Under Your Management</h2>
+    <ul>
+        {% for employee in employees %}
+            <li>{{ employee.user.first_name }} {{ employee.user.last_name }} - {{ employee.department }}</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'assign_task' %}" class="btn btn-primary">Assign Task</a>
+    <a href="{% url 'issue_offer_letter' %}" class="btn btn-primary">Issue Offer Letter</a>
+    <a href="{% url 'handle_payroll' %}" class="btn btn-primary">Handle Payroll</a>
+{% endblock %}

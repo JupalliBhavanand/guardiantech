@@ -1,0 +1,10 @@
+<section id="free-trial" class="free-trial-section">
+    <div class="container">
+        <h2 class="section-title">Register for a Free Trial</h2>
+        <form id="freeTrialForm" class="free-trial-form" method="post" action="{% url 'free_trial' %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</section>

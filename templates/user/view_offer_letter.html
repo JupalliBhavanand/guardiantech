@@ -1,0 +1,9 @@
+{% extends 'partials/top.html' %}
+
+{% block content %}
+<h2>View Offer Letter</h2>
+<p><strong>Offer Details:</strong> {{ offer_letter.offer_details }}</p>
+<p><strong>Issued By:</strong> {{ offer_letter.issued_by }}</p>
+<p><strong>Date Issued:</strong> {{ offer_letter.date_issued }}</p>
+<a href="{{ offer_letter.file.url }}" download>Download Offer Letter</a>
+{% endblock %}

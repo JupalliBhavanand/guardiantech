@@ -1,0 +1,33 @@
+<div class="container">
+    <!-- Page Header -->
+    <h2>{{ employee.user.get_full_name }} Details</h2>
+
+    <!-- Attendance Section -->
+    <h3 class="section-header">Attendance Records</h3>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Status</th>
+                <th>Check-In</th>
+                <th>Check-Out</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for record in attendance_records %}
+            <tr>
+                <td>{{ record.date }}</td>
+                <td>{{ record.status }}</td>
+                <td>{{ record.check_in_time }}</td>
+                <td>{{ record.check_out_time }}</td>
+                <td>
+                    <div class="btn-group-sm">
+                        <a href="{% url 'edit_attendance' record.id %}" class="btn btn-warning">Edit</a>
+                        <a href="{% url 'delete_attendance' record.id %}" class="btn btn-danger">Delete</a>
+                    </div>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>

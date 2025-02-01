@@ -1,0 +1,10 @@
+{% extends 'partials/top.html' %}
+
+{% block content %}
+<h2>Submit Attendance</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit Attendance</button>
+</form>
+{% endblock %}

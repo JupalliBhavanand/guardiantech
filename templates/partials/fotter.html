@@ -1,0 +1,133 @@
+
+  {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %} {% endblock %}</title>
+  <meta name="title" content="Adex">
+  <meta name="description" content="This is a business agency html template made by codewithsadee">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+
+  <!--- GOOGLE FONTS-->
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap" rel="stylesheet">
+
+  <!--- CUSTOM CSS-->
+  <link rel="stylesheet" href="{% static 'main.css' %}">
+
+ 
+
+
+
+  
+</head>
+
+<body>
+
+
+  <!-- HEADER -->
+
+
+  
+  
+  {% block content %}
+  <footer class="footer">
+  <div class="container grid-list">
+    <div class="footer-brand">
+      <a href="#" class="logo h4 footer-list-title">GuardianTech LLC</a>
+      <p class="footer-text">
+        &copy; 2024 All rights reserved.
+      </p>
+      <ul class="social-list">
+        <li>
+          <a href="https://www.linkedin.com/in/gaurdian-tech-7b9883335/" class="social-link">
+            <ion-icon name="logo-linkedin"></ion-icon>
+          </a>
+        </li>
+       
+      </ul>
+    </div>
+    <ul class="footer-list">
+      <li>
+        <p class="h4 footer-list-title">Get in Touch</p>
+      </li>
+      <li>
+        <address class="footer-text">
+          GuardianTech LLC
+            2115 colinas verdas rd
+        </address>
+      </li>
+      <li>
+        <a href="mailto:support@gaurdinateche.com" class="footer-link">support@gaurdinateche.com</a>
+      </li>
+      <li>
+        <a href="tel:001234567890" class="footer-link">(512) 506-0845</a>
+      </li>
+    </ul>
+    <ul class="footer-list">
+      <li>
+        <p class="h4 footer-list-title">Learn More</p>
+      </li>
+      <li>
+        <a href="#about" class="footer-link">About Us</a>
+      </li>
+      <li>
+        <a href="#" class="footer-link">Our Story</a>
+      </li>
+      <li>
+        <a href="#projects" class="footer-link">Projects</a>
+      </li>
+      <li>
+        <a href="#" class="footer-link">Terms of Use</a>
+      </li>
+      <li>
+        <a href="#" class="footer-link">Privacy Policy</a>
+      </li>
+    </ul>
+    <ul class="footer-list">
+      <li>
+        <p class="footer-list-title">Services</p>
+      </li>
+      <li>
+        <a href="#services" class="footer-link">Operations & Growth</a>
+      </li>
+      <li>
+        <a href="#services" class="footer-link">Cybersecurity</a>
+      </li>
+      <li>
+        <a href="#services" class="footer-link">Software Development</a>
+      </li>
+      <li>
+        <a href="#services" class="footer-link">Data Analytics</a>
+      </li>
+    </ul>
+
+  </div>
+</footer>
+
+
+  {% endblock %}
+  <!-- MAIN -->
+ 
+
+  <!-- FOOTER -->
+  
+
+  <!-- CUSTOM JS LINK -->
+  <script src="{% static 'script.js' %}"></script>
+
+
+  <!-- IONICON -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+
+</body>
+</html>
+
+
